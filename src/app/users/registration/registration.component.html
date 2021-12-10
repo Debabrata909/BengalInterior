@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contact Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  [fullscreen]="true" style="background-color: #EADFD9;">
+  <div id="container">
+  <form [formGroup]="ionicForm" name='ionicForm' (ngSubmit)="submitForm()" novalidate>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input  formControlName="name" type="text" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+      <ion-chip color="danger">
+        <ion-label> Name is required.</ion-label>
+      </ion-chip>
+      </span>
+      <div>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
+          <ion-chip color="danger">
+           <ion-label> Name should be min 2 chars long.</ion-label>
+         </ion-chip>
+       </span>
+      </div>
+    <ion-item lines="full">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input formControlName="email" type="email" required></ion-input>
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+     <ion-chip color="danger">
+        <ion-label>Email is required.</ion-label>
+      </ion-chip>
+    </span>
+    <div>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      <ion-chip color="danger">
+        <ion-label>Please provide valid email id.</ion-label>
+      </ion-chip>
+    </span>
+  </div>
+     <ion-item lines="full">
+      <!-- <ion-label class="ion-text-end" position="stacked">Fixed Label</ion-label> -->
+      <ion-label position="floating">Mobile</ion-label>
+      <ion-input inputmode="decimal" formControlName="mobile"  maxlength="10" type="text" required></ion-input>
+      <!-- <div class="ion-text-end">otp</div> -->
+    </ion-item>
+    
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+      
+      <ion-chip color="danger">
+        <ion-label> Mobile number is required.</ion-label>
+      </ion-chip>
+    </span>
+    <div>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+       <ion-chip color="danger">
+          <ion-label> Only numerical values allowed.</ion-label>
+        </ion-chip>
+      </span>
+    </div>
+    <div>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.minlength">
+     <ion-chip color="danger">
+        <ion-label> Mobile number should be 10 numerical.</ion-label>
+      </ion-chip>
+    </span>
+  </div>
+  <div>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.maxLength">
+    
+      <ion-chip color="danger">
+        <ion-label>  Mobile number should be 10 numerical.</ion-label>
+      </ion-chip>
+    </span>
+  </div>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" (click)='RedirectOtp()' type="sumbit" >Next</ion-button>
+        
+      <!-- <app-login [phnumber]="formValue"></app-login> -->
+      </ion-col>
+    </ion-row>
+  </form>
+  
+</div>
+</ion-content>

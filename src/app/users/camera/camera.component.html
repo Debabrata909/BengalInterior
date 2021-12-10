@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title><span class="com-title"> READY </span><span class="com-title2">HOME</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  [fullscreen]="true">
+  <div id="container">
+  <!-- <ion-img width="100" height="100" [src]="selectedImage"></ion-img>
+  <div class="ion-padding">
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)='picture()'>
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div> -->
+  <ion-card >
+    <img style="height: 411px;"  [src]="selectedImage" />
+   
+  </ion-card>
+ 
+  <ion-fab padding-top vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)='picture()'>
+              <ion-icon name="camera"></ion-icon>
+            </ion-fab-button>
+     </ion-fab>
+</div>
+</ion-content>

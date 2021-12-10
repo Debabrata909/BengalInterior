@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="returnPage"></ion-back-button>
+    </ion-buttons>
+    <ion-title><span class="com-title"></span><span class="com-title2">{{productType}}</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [fullscreen]="true" style="background-color: #EADFD9;">
+  <div id="container">
+<ion-list *ngFor="let p of productList; let i = index">
+  <!-- <ion-list-header>
+    Recent Conversations
+  </ion-list-header> -->
+
+  <ion-item>
+   <img style="height: 23vh;" [src]="[p.src]">
+   <ion-label style="padding-left: 1.3rem;">
+      <h2>Finn</h2>
+      <h3>I'm a big deal</h3>
+      <p>Listen, I've had a pretty messed up day...</p>
+    </ion-label>
+  </ion-item>
+ </ion-list>
+  </div>
+  </ion-content>

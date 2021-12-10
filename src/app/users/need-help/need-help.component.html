@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button icon="close-outline" defaultHref="/"></ion-back-button>
+    </ion-buttons> -->
+    <ion-title >Need Help ?</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content style="background-color: #EADFD9;padding: 2em;">
+  <!-- <ul class="list-group">
+    <div class="margin-top: 20px; display: flex;flex-direction: column;height: 100%;">
+    <a  class="list-group-item" style="font-size: 1.5rem; margin-bottom: 8px;" [ngClass]='obj.selected ? "active-list-help" : ""' *ngFor='let obj of HelpTitleList;let i = index;' (click)='SelectHelpTitle(i)'>
+     {{obj.name}}
+      <span class="float-end" *ngIf='obj.selected'>
+        <ion-icon name="checkmark"></ion-icon>
+      </span>
+    </a>
+  </div>
+</ul> -->
+<ion-list>
+  <ion-item (click)="RegQuestions('Commercial Designs')" button>
+    <ion-icon slot="start" name="business-outline"></ion-icon>&nbsp;
+    Commercial Designs
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  <ion-item (click)="RegQuestions('Residential Projects')" button>
+    <ion-icon slot="start" name="home-outline"></ion-icon>&nbsp;
+    Residential Projects
+    <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+  </ion-item>
+  </ion-list> 
+
+</ion-content>

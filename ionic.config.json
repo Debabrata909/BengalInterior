@@ -1,0 +1,10 @@
+{
+  "name": "Bengal interior",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

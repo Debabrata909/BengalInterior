@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>General Questions</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+  
+<ion-content  [fullscreen]="true" style="background-color: #EADFD9;">
+  <div id="container">
+    <p class="uploadtext">Upload Photos(max4) for further description</p>
+    <section class="bg-diffrent">
+      <div class="container">
+          <div class="row" style="overflow-y: hidden;overflow-x: scroll;max-height:100px;margin-bottom:1em;">
+            <div class="file-select file-select-box" *ngIf="SelectedImageArr.length !== 4">
+              <div class="file-select file-select-box">
+                <button (click)="picture()" class="file-upload-custom-btn"><ion-icon name="add-circle-sharp"></ion-icon></button>
+                <!-- <input type="file" name="files[]" class="profileimg"> -->
+                  </div>
+            </div>
+            <div class="file-select file-select-box" *ngFor='let imgObj of SelectedImageArr;let i =index;'>
+              <div class="imagePreview">
+                <img style="transform: rotate(90deg); margin-top: 1rem;" [src]="imgObj" />
+                <span (click)='RemoveImage(i)' style="position: absolute;top: -24%;right: 8%;font-size: 1.8em;color: red;">
+                  <ion-icon name="close-circle"></ion-icon>
+                </span>
+              </div>
+          </div>
+          </div>
+      </div>
+  </section>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            What is the current status of the Project ?*
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-list>
+              <ion-radio-group name="Planning" #Planning="ngModel"
+              [(ngModel)]="objgenquestions.planning" value="undefined">
+                <ion-item>
+                  <ion-label>Planning and budgeting</ion-label>
+                  <ion-radio slot="start" color="tertiary" value="Planning and budgeting"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Ready for execution</ion-label>
+                  <ion-radio slot="start" color="tertiary" value="Ready for execution"></ion-radio>
+                </ion-item>
+      
+                <ion-item>
+                  <ion-label>Project has alreadt stared</ion-label>
+                  <ion-radio slot="start" color="tertiary" value="Project has already stared"></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+              </ion-list>
+          </div>
+        </div>
+      </div>
+      <ion-item lines="full">
+        <ion-label position="floating">Budget *</ion-label>
+        <ion-input inputmode="decimal" name="budget" #budget="ngModel"
+        [(ngModel)]="objgenquestions.budget" type="Budget" required></ion-input>
+      </ion-item>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            When should the project be delivered at the latest?*
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-list>
+              <ion-radio-group name="delivered" #delivered="ngModel"
+              [(ngModel)]="objgenquestions.delivered" value="undefined">
+                  <ion-item>
+                    <ion-label>1 to 3 months</ion-label>
+                    <ion-radio slot="start" color="success" value="1 to 3 months"></ion-radio>
+                  </ion-item>
+        
+                  <ion-item>
+                    <ion-label>4 to 6 months</ion-label>
+                    <ion-radio slot="start" color="success" value="4 to 6 months"></ion-radio>
+                  </ion-item>
+        
+                  <ion-item>
+                    <ion-label>Later then 6 months</ion-label>
+                    <ion-radio slot="start" color="success" value="Later then 6 months"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>I don't know yet</ion-label>
+                    <ion-radio slot="start" color="success" value="I don't know yet"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
+              </ion-list>
+          </div>
+        </div>
+      </div>
+     </div>
+    
+    </div>
+    </ion-content>
+    <ion-footer  class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>
+          <ion-button  (click)="genQuestionsSubmit()" expand="block">NEXT</ion-button>
+          </ion-title>
+          </ion-toolbar>
+          </ion-footer>

@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title><span class="com-title">Commercial </span><span class="com-title2">Designs</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  [fullscreen]="true" style="background-color: #EADFD9;">
+  <div id="container">
+    <!-- <ion-grid >
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-item style="padding-right: 0px;">
+              <div class="imagebox">
+                <a [routerLink]="['/Product']" [queryParams]="{type:'Sofa',page:'Commercial',backURL:'office'}">
+                  <img src="assets/41lXeN+j52L.jpg"  class="category-banner img-responsive">
+                  <span class="imagebox-desc">Sofa</span>
+                </a>
+              </div>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-item>
+              <div class="imagebox">
+                <a [routerLink]="['/Product']" [queryParams]="{type:'TABLE',page:'Commercial',backURL:'office'}">
+                  <img src="assets/table45.jpg"  class="category-banner img-responsive">
+                  <span class="imagebox-desc">Table</span>
+                </a>
+              </div>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+     </ion-grid> -->
+     <div *ngIf="CommercialList.length">
+     <ion-grid >
+       <ion-col *ngFor="let p of CommercialList; let i = index">
+          <div>
+            <ion-item style="padding-right: 0px;">
+              <div class="imagebox">
+                <a >
+                  <img [src]="p.File_URL"  class="category-banner img-responsive">
+                 </a>
+              </div>
+            </ion-item>
+          </div>
+        </ion-col>
+      
+    
+     </ion-grid>
+     </div>
+     <div *ngIf="!CommercialList.length">
+      <ion-list>
+       <ion-item>
+         <ion-skeleton-text animated style="width: 100%; height: 10rem"></ion-skeleton-text>
+       </ion-item>
+       <ion-item>
+         <ion-skeleton-text animated style="width: 100%; height: 10rem"></ion-skeleton-text>
+       </ion-item>
+       <ion-item>
+         <ion-skeleton-text animated style="width: 100%; height: 10rem"></ion-skeleton-text>
+       </ion-item>
+       <ion-item>
+         <ion-skeleton-text animated style="width: 100%; height: 3rem"></ion-skeleton-text>
+       </ion-item>
+     </ion-list>
+     </div>
+    </div>
+</ion-content>

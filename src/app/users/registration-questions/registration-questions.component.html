@@ -1,0 +1,214 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button  defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{headername}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+  
+<ion-content  [fullscreen]="true" style="background-color: #EADFD9;">
+  <div id="container">
+    <div class="accordion" id="accordionExample" *ngIf="headername === 'Commercial Designs'">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Office carpet area ?*
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-item lines="full">
+              <ion-label position="floating">Area</ion-label>
+              <ion-input inputmode="decimal" name="Area" #Area="ngModel"
+              [(ngModel)]="objqueries.area" type="text" required></ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Number of cubicle ?*
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-item lines="full">
+              <ion-label position="floating">Cubicle</ion-label>
+              <ion-input inputmode="decimal" name="Cubicle" #Cubicle="ngModel"
+              [(ngModel)]="objqueries.cubicle" type="text" required></ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Number of cabin ?*
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-item lines="full">
+              <ion-label position="floating">Cabin</ion-label>
+              <ion-input inputmode="decimal" name="Cabin" #Cabin="ngModel"
+              [(ngModel)]="objqueries.cabin" type="text" required></ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Number of work station ?*
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-item lines="full">
+              <ion-label position="floating">Work Station</ion-label>
+              <ion-input inputmode="decimal" name="Work_Station" #Work_Station="ngModel"
+              [(ngModel)]="objqueries.workstation"  type="text" required></ion-input>
+            </ion-item>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion" id="accordionExampleResidential" *ngIf="headername === 'Residential Projects'">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOneResidential">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneResidential" aria-expanded="true" aria-controls="collapseOneResidential">
+            What would you like tp request help for ?*
+          </button>
+        </h2>
+        <div id="collapseOneResidential" class="accordion-collapse collapse show" aria-labelledby="headingOneResidential" data-bs-parent="#accordionExampleResidential">
+          <div class="accordion-body">
+            <ion-list>
+              <ion-item>
+                  <ion-label>Consulting & Planning</ion-label>
+                  <ion-checkbox color="primary"  slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Room Design</ion-label>
+                  <ion-checkbox color="primary"  slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Furniture Design</ion-label>
+                  <ion-checkbox color="primary"  slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Restoration</ion-label>
+                  <ion-checkbox color="primary"  slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>I don't know yet</ion-label>
+                  <ion-checkbox color="primary"  slot="start"></ion-checkbox>
+                </ion-item>
+              </ion-list>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingtwoResidential">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwoResidential" aria-expanded="false" aria-controls="collapsetwoResidential">
+            Which area(s) should your interior design project cover ?*
+          </button>
+        </h2>
+        <div id="collapsetwoResidential" class="accordion-collapse collapse" aria-labelledby="headingtwoResidential" data-bs-parent="#accordionExampleResidential">
+          <div class="accordion-body">
+            <ion-list>
+              <ion-item>
+                  <ion-label>Entire house</ion-label>
+                  <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Kitchen</ion-label>
+                  <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Living/Dining room</ion-label>
+                  <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Bathroom</ion-label>
+                  <ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+                </ion-item>
+               </ion-list>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingthreeResidential">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethreeResidential" aria-expanded="false" aria-controls="collapsethreeResidential">
+            How large is the space to design ?*
+          </button>
+        </h2>
+        <div id="collapsethreeResidential" class="accordion-collapse collapse" aria-labelledby="headingthreeResidential" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-list>
+              <ion-radio-group value="grape">
+                 <ion-item>
+                  <ion-label>Small (less then 200 sq ft)</ion-label>
+                  <ion-radio slot="start" color="success" value="Small (Under 15m2)"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Medium (200 to 500 sq ft)</ion-label>
+                  <ion-radio slot="start" color="success" value="Medium (15-50m2)"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Large (more then 500 sq ft)</ion-label>
+                  <ion-radio slot="start" color="success" value="Large (over 50m2)"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>I don't know yet / It is no room</ion-label>
+                  <ion-radio slot="start" color="success" value="I don't know yet / It is no room"></ion-radio>
+                </ion-item>
+                </ion-radio-group>
+              </ion-list>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingfourResidential">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefourResidential" aria-expanded="false" aria-controls="collapsefourResidential">
+            What is ypur residence standard ?*
+          </button>
+        </h2>
+        <div id="collapsefourResidential" class="accordion-collapse collapse" aria-labelledby="headingfourResidential" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <ion-list>
+              <ion-radio-group value="grape">
+                 <ion-item>
+                  <ion-label>Simple</ion-label>
+                  <ion-radio slot="start" color="success" value="Simple"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>Normal</ion-label>
+                  <ion-radio slot="start" color="success" value="Normal"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>High</ion-label>
+                  <ion-radio slot="start" color="success" value="High"></ion-radio>
+                </ion-item>
+                <ion-item>
+                  <ion-label>I don't know</ion-label>
+                  <ion-radio slot="start" color="success" value="I don't know"></ion-radio>
+                </ion-item>
+                </ion-radio-group>
+              </ion-list>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+</ion-content>
+<ion-footer  class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <ion-button (click)="GenQuestions()"  expand="block">NEXT</ion-button>
+      </ion-title>
+      </ion-toolbar>
+      </ion-footer>

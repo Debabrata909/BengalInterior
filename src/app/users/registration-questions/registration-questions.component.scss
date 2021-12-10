@@ -1,0 +1,16 @@
+.ion-color-danger{
+    --ion-color-base: #44b1eb !important;
+    --highlight-color-invalid: #44b1eb !important;
+} 
+:host(.item-interactive.ion-invalid){
+    --highlight-background: #44b1eb !important;
+}
+.item-highlight, .item-inner-highligh{
+    background: #44b1eb !important;
+}
+:host(.item-interactive){
+    --highlight-color-invalid: #44b1eb !important;
+}
+.item-highlight, .item-inner-highligh{
+    background: #44b1eb !important;
+}

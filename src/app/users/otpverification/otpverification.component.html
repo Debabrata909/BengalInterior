@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-title>Verify Your Phone Number</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content  [fullscreen]="true" style="background-color: #EADFD9;">
+  <div id="container">
+    <div style="position: absolute;top: 35%;left: 50%;width: 54%;transform: translate(-50%,-50%);text-align: center;">
+      <div class='p-4' style="font-size: 1.3em;font-weight: 500;">9438392399</div>
+      <div>
+        <ng-otp-input  (onInputChange)="onOtpChange($event)"  [config]="{length:5}"></ng-otp-input>
+      </div>
+      <div class='mt-4'>
+        <div class="bg-gradient bg-warning p-1" style="border-radius: 5px;">
+          <ion-icon name="hourglass-outline"></ion-icon>&nbsp; {{TimerLabel}}
+        </div>
+        <div class="mt-2">
+          <ion-button (click)="ResendOtp()">
+            <ion-icon  name="refresh-circle"></ion-icon>&nbsp; Resend
+          </ion-button> 
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer  class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>      
+      <ion-button expand="block" type="sumbit" >Verify Phone Number</ion-button> 
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
